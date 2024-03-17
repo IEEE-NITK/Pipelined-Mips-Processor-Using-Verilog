@@ -34,5 +34,13 @@ clk=~clk;
 initial begin
 reset=1'b1;#10
 reset=1'b0;
+#1000
+$finish;
 end
+
+initial begin
+    $dumpfile("tb_Processor.vcd");
+    $dumpvars(0,tb_Processor);
+end
+
 endmodule
