@@ -43,10 +43,10 @@ assign rd = InstrD[15:11];
 assign PCSrc = Jump;
 //execute cycle
 execute_cycle execution(RegWrite,ALUSrc,MemWrite,ALUOp,MemToReg,MemRead,Branch,Jump,RegDst,PC,WriteData,
-                    WriteRegister,ALUres,zero,exten_out,Addresult,ReadData1,ReadData2,rd,PCT_new);
+                    WriteRegister,ALUres,zero,exten_out,Addresult,ReadData1,ReadData2,rd);
 
 // mem cycle
-mem_cycle memory(clk,ALUres,WriteData,MemRead,MemWrite,ReadData,ALUres_out,WriteRegister,zero,Branch,WriteRegister);
+mem_cycle memory(clk,ALUres,WriteData,MemRead,MemWrite,ReadData,ALUres_out,WriteRegister,zero,Branch,WriteRegister,PCT_new);
 
 //writeback cycle
 Writeback_cycle writeback(RegWrite,WriteData,MemToReg,ReadData,ALUres,WriteRegister);

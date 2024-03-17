@@ -34,5 +34,8 @@ clk=~clk;
 initial begin
 reset=1'b1;#10
 reset=1'b0;
+#1000
+$finish;
 end
+
 endmodule
